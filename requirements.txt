@@ -1,6 +1,5 @@
 flask
 requests
-bs4beautifulsoup4
 blinker
 bs4
 certifi
