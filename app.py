@@ -57,6 +57,10 @@ def get_ikman_ads():
             # Extract time and date information
             time_date_div = ad.find('div', class_='updated-time--1DbCk')
             ad_info['time_date'] = time_date_div.text.strip() if time_date_div else "Time and Date Not Available"
+            
+            # Extract image URL
+            image_element = ad.find('img', class_='normal-ad--1TyjD')
+            ad_info['image_url'] = image_element['src'] if image_element else "Image Not Available"
 
             ad_list.append(ad_info)
 
