@@ -117,6 +117,11 @@ def scrape():
             # Extract date and time information
             date_time_element = soup_ad.find('h2', style="font-size:13px;text-align:center;color:#636b75;font-weight:normal;padding:0 0 5px 0;line-height:1.3em;")
             date_time = date_time_element.text.strip() if date_time_element else "Date and Time Not Available"
+            
+            # Extract the price element
+            price_element = item.find('div', class_='boxintxt b')
+            price = price_element.text.strip() if price_element else "Price Not Available"
+   
 
             # Extract the image URL
             image_element = item.find('img')
@@ -126,7 +131,8 @@ def scrape():
                 "title": title,
                 "link": link,
                 "date_time": date_time,
-                "image_url": image_url
+                "image_url": image_url,
+                "price": price  
             })
 
         return jsonify({"results": results})
