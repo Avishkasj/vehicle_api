@@ -79,7 +79,7 @@ def scrape():
         registration = request.args.get('registration', default='registered', type=str)
 
         # Construct the URL dynamically based on parameters
-        url = f"https://riyasewana.com/search/cars/{make}/{type_of_car}/{city}/{registration}"
+        url = f"https://riyasewana.com/search//{make}/{type_of_car}/{city}/{registration}"
 
         # Define headers
         headers = {
